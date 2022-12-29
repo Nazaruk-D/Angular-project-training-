@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-root',
+  selector: 'inst-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'instagram';
+  appTitle = 'Instagram'
+  text = 'start value'
+
+  // changeTitleHandler() {
+  //   this.appTitle = 'IT'
+  // }
+  //
+  // changeTextHandler(event: Event) {
+  //   this.text = (event.currentTarget as HTMLInputElement).value
+  // }
 }
