@@ -1,0 +1,6 @@
+<div>
+  <h1>
+    Parent {{ name }}{{ surName }} from {{ address.city }} {{ address.street }} {{ address.house }}
+  </h1>
+  <inst-children [surNameProps]="surName" [address]="address"></inst-children>
+</div>
