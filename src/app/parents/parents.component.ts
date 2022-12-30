@@ -1,10 +1,5 @@
 import { Component } from '@angular/core'
-
-export interface Address {
-  city: string
-  street: string
-  house: number
-}
+import { Grade } from './children/children.component'
 
 @Component({
   selector: 'inst-parents',
@@ -12,11 +7,10 @@ export interface Address {
   styleUrls: ['./parents.component.scss'],
 })
 export class ParentsComponent {
-  name = 'Ivan'
-  surName = 'Petrov'
-  address: Address = {
-    city: 'Minsk',
-    street: 'Some',
-    house: 11,
+  math?: number = undefined
+  phys?: number = undefined
+  getGrade(value: Grade) {
+    this.math = value.math
+    this.phys = value.phys
   }
 }
