@@ -56,6 +56,14 @@ export class ParentsComponent {
     },
   ]
 
+  isLoading = true
+
+  constructor() {
+    setTimeout(() => {
+      this.isLoading = false
+    }, 3000)
+  }
+
   getGrade(grade: string) {
     // this.grades.push(grade)
     // this.math = value.math
