@@ -4,8 +4,8 @@
   <!--  <div *ngFor="let el of grades; index as i; count as count; even as even">-->
   <!--    {{ i }} - {{ el }} count:{{ count }} even: {{ even }}-->
   <!--  </div>-->
-  <div *ngIf="isLoading; else content">Loading...</div>
-  <ng-template #content>
+  <div *ngIf="isLoading">Loading...</div>
+  <ng-container *ngIf="!isLoading">
     <div *ngFor="let lesson of lessons">
       <div>
         <h3>
@@ -17,5 +17,5 @@
         </div>
       </div>
     </div>
-  </ng-template>
+  </ng-container>
 </div>
