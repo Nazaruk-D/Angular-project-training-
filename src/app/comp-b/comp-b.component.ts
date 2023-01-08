@@ -12,7 +12,10 @@ export class CompBComponent implements OnInit {
   constructor(private valueService: ValueService) {}
 
   ngOnInit(): void {
-    this.value = this.valueService.value
+    // this.value = this.valueService.value
+    this.valueService.value$.subscribe(value => {
+      this.value = value
+    })
   }
 
   decValueHandler() {

@@ -12,7 +12,11 @@ export class CompAComponent implements OnInit {
   constructor(private valueService: ValueService) {}
 
   ngOnInit(): void {
-    this.value = this.valueService.value
+    // this.value = this.valueService.value
+    //Подписка
+    this.valueService.value$.subscribe(value => {
+      this.value = value
+    })
   }
 
   addValueHandler() {
