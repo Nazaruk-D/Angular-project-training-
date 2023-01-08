@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ValueService } from '../services/value.service'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'inst-comp-a',
@@ -7,16 +8,16 @@ import { ValueService } from '../services/value.service'
   styleUrls: ['./comp-a.component.scss'],
 })
 export class CompAComponent implements OnInit {
-  value = 0
+  value$ = new Observable()
 
   constructor(private valueService: ValueService) {}
 
   ngOnInit(): void {
     // this.value = this.valueService.value
     //Подписка
-    this.valueService.value$.subscribe(value => {
-      this.value = value
-    })
+    // this.valueService.value$.subscribe(value => {
+    // })
+    this.value$ = this.valueService.value$
   }
 
   addValueHandler() {
