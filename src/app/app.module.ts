@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { FormsModule } from '@angular/forms'
-import { ParentsComponent } from './parents/parents.component'
+import { CompAComponent } from './comp-a/comp-a.component'
+import { CompBComponent } from './comp-b/comp-b.component'
 
 @NgModule({
-  declarations: [AppComponent, ParentsComponent],
+  declarations: [AppComponent, CompAComponent, CompBComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

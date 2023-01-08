@@ -4,5 +4,13 @@ import { Injectable } from '@angular/core'
   providedIn: 'root',
 })
 export class ValueService {
-  value = 10
+  value = 0
+
+  addValue() {
+    this.value = this.value + 1
+  }
+
+  decValue() {
+    this.value = this.value - 1
+  }
 }
