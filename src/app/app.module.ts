@@ -5,10 +5,11 @@ import { AppComponent } from './app.component'
 import { FormsModule } from '@angular/forms'
 import { CompAComponent } from './comp-a/comp-a.component'
 import { CompBComponent } from './comp-b/comp-b.component'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent, CompAComponent, CompBComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
