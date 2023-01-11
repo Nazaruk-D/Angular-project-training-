@@ -4,11 +4,10 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { FormsModule } from '@angular/forms'
 import { CompAComponent } from './comp-a/comp-a.component'
-import { CompBComponent } from './comp-b/comp-b.component'
 import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
-  declarations: [AppComponent, CompAComponent, CompBComponent],
+  declarations: [AppComponent, CompAComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
