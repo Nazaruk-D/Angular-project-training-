@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject, map, Observable } from 'rxjs'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
+import { BehaviorSubject, catchError, EMPTY, map, throwError } from 'rxjs'
 import { environment } from '../../environment/environment'
+import { BeatyLoggerService } from './beaty-logger.service'
 
 export interface Todo {
   addedDate: string
@@ -29,11 +30,18 @@ export class TodosService {
       'api-key': environment.apiKey,
     },
   }
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private beatyLoggerService: BeatyLoggerService) {}
 
   getTodos() {
     this.http
       .get<Todo[]>(`${environment.baseURL}/todo-lists`, this.httpOptions)
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          this.beatyLoggerService.log(err.message, 'error')
+          return EMPTY
+          // return throwError(err)
+        })
+      )
       .subscribe(todos => {
         this.todos$.next(todos)
       })
