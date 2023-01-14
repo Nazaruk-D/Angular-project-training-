@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { FormControl } from '@angular/forms'
+import { FormControl, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'inst-login',
@@ -7,7 +7,16 @@ import { FormControl } from '@angular/forms'
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  email = new FormControl('')
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+  })
+
+  onSubmit() {
+    alert(JSON.stringify(this.profileForm.value))
+  }
 
   ngOnInit(): void {}
 }

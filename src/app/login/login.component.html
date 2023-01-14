@@ -1,3 +1,13 @@
 <p>login works!</p>
-<input type="text" [formControl]="email" />
-<h1>{{ email.value }}</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="firstName" />
+  <input type="text" formControlName="lastName" />
+  <input type="text" formControlName="email" />
+  <input type="password" formControlName="password" />
+  <button type="submit">+</button>
+</form>
+
+<h2>first name: {{ profileForm.value.firstName }}</h2>
+<h2>last name: {{ profileForm.value.lastName }}</h2>
+<h2>email name: {{ profileForm.value.email }}</h2>
+<h2>pass name: {{ profileForm.value.password }}</h2>
