@@ -2,12 +2,25 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <input type="text" formControlName="firstName" required />
   <div *ngIf="firstName!.invalid && (firstName!.dirty || firstName!.touched)">
-    Name is required.
+    <div *ngIf="firstName!.errors?.['required']">Name is required.</div>
   </div>
 
   <input type="text" formControlName="lastName" />
+  <div *ngIf="lastName!.invalid && (lastName!.dirty || lastName!.touched)">
+    <div *ngIf="lastName!.errors?.['required']">Last name is required.</div>
+  </div>
+
   <input type="text" formControlName="email" />
+  <div *ngIf="email!.invalid && (email!.dirty || email!.touched)">
+    <div *ngIf="email!.errors?.['required']">Email is required.</div>
+    <div *ngIf="email!.errors?.['email']">Email is required.</div>
+  </div>
+
   <input type="password" formControlName="password" />
+  <div *ngIf="password!.invalid && (password!.dirty || password!.touched)">
+    <div *ngIf="password!.errors?.['required']">Password is required.</div>
+  </div>
+
   <button [disabled]="profileForm.invalid" type="submit">+</button>
 </form>
 

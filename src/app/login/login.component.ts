@@ -8,14 +8,23 @@ import { FormControl, FormGroup, Validator, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl('', Validators.required),
-    password: new FormControl(''),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
   })
 
   get firstName() {
     return this.profileForm.get('firstName')
+  }
+  get lastName() {
+    return this.profileForm.get('lastName')
+  }
+  get email() {
+    return this.profileForm.get('email')
+  }
+  get password() {
+    return this.profileForm.get('password')
   }
 
   onSubmit() {
