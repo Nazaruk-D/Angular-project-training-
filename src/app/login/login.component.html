@@ -13,7 +13,7 @@
   <input type="text" formControlName="email" />
   <div *ngIf="email!.invalid && (email!.dirty || email!.touched)">
     <div *ngIf="email!.errors?.['required']">Email is required.</div>
-    <div *ngIf="email!.errors?.['email']">Email is required.</div>
+    <div *ngIf="email!.errors?.['pattern']">Invalid email address</div>
   </div>
 
   <input type="password" formControlName="password" />
