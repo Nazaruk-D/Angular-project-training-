@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { LoginComponent } from './login/login.component'
 import { UsersComponent } from './components/users/users.component'
 import { ProfileComponent } from './components/profile/profile.component'
-import { RouterModule } from '@angular/router'
+import { AppRoutingRoutingModule } from './app-routing-routing.module'
 
 @NgModule({
   declarations: [AppComponent, CompAComponent, LoginComponent, UsersComponent, ProfileComponent],
@@ -18,12 +18,7 @@ import { RouterModule } from '@angular/router'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: ProfileComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'compA', component: CompAComponent },
-      { path: 'users', component: UsersComponent },
-    ]),
+    AppRoutingRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
