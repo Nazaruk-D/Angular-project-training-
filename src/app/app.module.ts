@@ -8,10 +8,11 @@ import { HttpClientModule } from '@angular/common/http'
 import { LoginComponent } from './login/login.component'
 import { UsersComponent } from './components/users/users.component'
 import { ProfileComponent } from './components/profile/profile.component'
-import { AppRoutingRoutingModule } from './app-routing-routing.module'
+import { AppRoutingRoutingModule } from './app-routing-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
 
 @NgModule({
-  declarations: [AppComponent, CompAComponent, LoginComponent, UsersComponent, ProfileComponent],
+  declarations: [AppComponent, CompAComponent, LoginComponent, UsersComponent, ProfileComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -4,6 +4,7 @@ import { ProfileComponent } from './components/profile/profile.component'
 import { LoginComponent } from './login/login.component'
 import { CompAComponent } from './comp-a/comp-a.component'
 import { UsersComponent } from './components/users/users.component'
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
 
 const routes: Routes = [
   { path: '', component: ProfileComponent },
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'todos', component: CompAComponent },
   { path: 'users', component: UsersComponent },
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '404' },
 ]
 
 @NgModule({
