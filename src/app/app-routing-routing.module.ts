@@ -7,8 +7,9 @@ import { UsersComponent } from './components/users/users.component'
 
 const routes: Routes = [
   { path: '', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'compA', component: CompAComponent },
+  { path: 'todos', component: CompAComponent },
   { path: 'users', component: UsersComponent },
 ]
 
