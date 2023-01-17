@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { Todo, TodosService } from '../services/todos.service'
+import { Todo, TodosService } from '../../services/todos.service'
 import { Observable, Subscription } from 'rxjs'
 
 @Component({
