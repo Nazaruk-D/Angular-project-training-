@@ -5,9 +5,6 @@ import { AppComponent } from './app.component'
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingRoutingModule } from './app-routing-routing.module'
 import { HomeModule } from './home/home.module'
-import { TodosModule } from './todos/todos.module'
-import { UsersModule } from './users/users.module'
-import { AuthModule } from './auth/auth.module'
 import { SharedModule } from './shared/shared.module'
 import { CoreModule } from './core/core.module'
 
@@ -19,9 +16,6 @@ import { CoreModule } from './core/core.module'
     HttpClientModule,
     AppRoutingRoutingModule,
     HomeModule,
-    TodosModule,
-    UsersModule,
-    AuthModule,
     SharedModule,
     CoreModule,
   ],
