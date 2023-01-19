@@ -1,14 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { Todo, TodosService } from '../../services/todos.service'
+import { Component, OnInit } from '@angular/core'
+import { TodosService } from '../../services/todos.service'
 import { Observable, Subscription } from 'rxjs'
+import { Todo } from '../../models/todos.model'
 
 @Component({
-  selector: 'inst-comp-a',
-  templateUrl: './comp-a.component.html',
-  styleUrls: ['./comp-a.component.scss'],
+  selector: 'inst-todos',
+  templateUrl: './todos.component.html',
+  styleUrls: ['./todos.component.scss'],
 })
-export class CompAComponent implements OnInit {
+export class TodosComponent implements OnInit {
   todos$!: Observable<Todo[]>
   error = ''
 

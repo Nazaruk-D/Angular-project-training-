@@ -1,22 +1,10 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { BehaviorSubject, catchError, EMPTY, map, throwError } from 'rxjs'
-import { environment } from '../../environment/environment'
-import { BeatyLoggerService } from './beaty-logger.service'
-
-export interface Todo {
-  addedDate: string
-  id: string
-  order: number
-  title: string
-}
-
-export interface BaseResponse<T = {}> {
-  data: T
-  message: string[]
-  fieldsErrors: string[]
-  resultCode: number
-}
+import { BehaviorSubject, catchError, EMPTY, map } from 'rxjs'
+import { environment } from '../../../environment/environment'
+import { BeatyLoggerService } from '../../core/services/beaty-logger.service'
+import { Todo } from '../models/todos.model'
+import { BaseResponse } from '../../core/models/core.module'
 
 @Injectable({
   providedIn: 'root',
